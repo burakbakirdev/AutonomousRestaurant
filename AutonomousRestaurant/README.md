@@ -1,6 +1,5 @@
 # AutonomousRestaurant
-
-
+  Autonomous restaurants will become widespread in the future. There will be robot waiters inside, so we can quickly place our order and pay, and wait for the robots to bring our orders.This project aims to create a mobile application. With this application, you can quickly give your order, get the check and make your payment quickly.
 
 ## Loom Video
 
