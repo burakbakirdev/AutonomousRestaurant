@@ -42,8 +42,9 @@ After all these steps, you can now switch to using the functions.
 ## Functions
 
 1-Initialize
+  <br/>
   First of all we need to initialize the contract.
-How to call:
+
 
 ```ts
 
@@ -51,8 +52,8 @@ near call $CONTRACT initialize --accountId $CONTRACT
 ```
 
 2-Choose Tables
+  <br/>
   Users choose tables with this function.
-How to call:
 
 ```ts
 
@@ -60,8 +61,9 @@ near call $CONTRACT chooseTables '{"tableId": 2}' --accountId $CONTRACT
 ```
 
 3-Give Order
+  <br/>
   This function can be called as many times as desired and serves to give an order.
-How to call:
+
 
 ```ts
 
@@ -69,8 +71,9 @@ near call $CONTRACT giveOrder '{"tableId": 2, "consumableId": 3}' --accountId $C
 ```
 
 4-Get Check
+  <br/>
   This functions get the check, after you give order as much as you want.
-How to call:
+
 
 ```ts
 
@@ -78,8 +81,9 @@ near call $CONTRACT getCheck '{"tableId": 2}' --accountId $CONTRACT
 ```
 
 5-Pay Check
+  <br/>
   This function pay the check using your wallet after you input deposit. Be careful about input amount.
-How to call:
+
 
 ```ts
 
