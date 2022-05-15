@@ -47,68 +47,42 @@ How to call:
 
 ```ts
 
-near call dev-1652101537988-65015769314783 initialize --accountId dev-1652101537988-65015769314783
+near call $CONTRACT initialize --accountId $CONTRACT
 ```
 
-2-Launching Schedule
-This function notifies the system of a new flight with the information it receives from the user.
+2-Choose Tables
+  Users choose tables with this function.
 How to call:
 
 ```ts
 
-near call $CONTRACT Launching_schedule '{"text":"Moon and Back Mission","cost":"250000","capsul":7,"destination":"Moon","departure":"İstanbul","max_seat":7}' --accountId <YOUR TESTNET ACCOUNT>
+near call $CONTRACT chooseTables '{"tableId": 2}' --accountId $CONTRACT
 ```
 
-3-specific_flight
-This function displays the Id information received from the user and the rest of the flight that has that ID.
+3-Give Order
+  This function can be called as many times as desired and serves to give an order.
 How to call:
 
 ```ts
 
-near call $CONTRACT specific_flight '{"id":<FLİGHT ID HERE>}' --accountId <YOUR TESTNET ACCOUNT>
+near call $CONTRACT giveOrder '{"tableId": 2, "consumableId": 3}' --accountId $CONTRACT
 ```
 
-4-Show_All
-This function does not receive any information from the user, when called, it displays all the flights available on the site.
+4-Get Check
+  This functions get the check, after you give order as much as you want.
 How to call:
 
 ```ts
 
-near call $CONTRACT Show_All '{}' --accountId <YOUR TESTNET ACCOUNT>
+near call $CONTRACT getCheck '{"tableId": 2}' --accountId $CONTRACT
 ```
 
-5-delete_specific
-Deletes the flight associated with that id from the system with the id information it receives from the user.
+5-Pay Check
+  This function pay the check using your wallet after you input deposit. Be careful about input amount.
 How to call:
 
 ```ts
 
-near call $CONTRACT delete_specific '{"id":<FLİGHT ID HERE>}' --accountId <YOUR TESTNET ACCOUNT>
+near call $CONTRACT payCheck '{"tableId": 2}' --accountId $CONTRACT --deposit 1.61
 ```
 
-6-deleteall
-This function does not receive any information from the user, when called, it deletes all the flights available on the site.
-How to call:
-
-```ts
-
-near call $CONTRACT deleteall '{}' --accountId <YOUR TESTNET ACCOUNT>
-```
-
-7-Update
-This function updates the flight information associated with the id sent to the function with the information in the second parameter received by the function. In the second parameter, you need to re-enter the information you want to remain the same. The information you enter must be in the desired order. As a result of this operation, the id does not change.
-How to call:
-
-```ts
-
-near call $CONTRACT Update '{"id":<FLİGHT ID HERE>,"updates":{"text":"Moon and Back","cost":"560000","capsul":5,"destination":"Moon","departure":"İstanbul","max_seat":7}}' --accountId <YOUR TESTNET ACCOUNT>
-```
-
-8-BuyingSeat
-This function works with the id and passenger id sent to the function. For the transaction to take place, you must have a balance equal to or greater than the seat fee stated in your NEAR wallet. If you have the balance to buy a seat after this check, the number of seats on the flight will be reduced by one.
-How to call:
-
-```ts
-
-near call $CONTRACT BuyingSeat '{"id":<FLİGHT ID HERE>,"passenger":"<YOUR TESTNET ACCOUNT>"}' --accountId <YOUR TESTNET ACCOUNT>
-```
